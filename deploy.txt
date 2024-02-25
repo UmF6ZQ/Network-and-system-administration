@@ -1,0 +1,9 @@
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.1/deploy/static/provider/baremetal/deploy.yaml
+kubectl -n ingress-nginx  get pods
+kubectl -n ingress-nginx get svc
+kubectl apply -f patch-configmap.yaml
+kubectl apply -f my-nginx-deploy.yaml
+kubectl get pods -l run=my-nginx
+kubectl apply -f my-nginx-svc.yaml
+kubectl get svc my-nginx
+kubectl apply -f my-nginx-ingress.yaml
